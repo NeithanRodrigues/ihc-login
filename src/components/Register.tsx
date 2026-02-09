@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { users } from "../user";
 
-
 export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -26,16 +25,19 @@ export default function Register() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#121212]">
-      <div className="bg-white p-10 rounded-xl shadow w-[350px] flex flex-col gap-4 text-center">
-        <h1 className="text-2xl font-bold text-gray-800">Criar Conta</h1>
+    <div className="flex items-center justify-center h-screen bg-gradient-to-br from-[#0d0d0d] via-[#121212] to-[#1c1c1c] p-4">
+      <div className="backdrop-blur-xl bg-white/10 border border-white/20 p-8 rounded-2xl shadow-2xl w-[350px] flex flex-col gap-5 text-center transition-all">
+        
+        <h1 className="text-3xl font-semibold text-white drop-shadow">
+          Criar Conta
+        </h1>
 
         <input
           type="text"
           placeholder="Usuário"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="p-2 border rounded"
+          className="p-3 bg-white/20 text-white placeholder-gray-300 rounded-lg border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
         <input
@@ -43,18 +45,18 @@ export default function Register() {
           placeholder="Senha"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="p-2 border rounded"
+          className="p-3 bg-white/20 text-white placeholder-gray-300 rounded-lg border border-white/30 focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
 
         <button
           onClick={handleRegister}
-          className="bg-blue-500 hover:bg-blue-600 text-white p-2 rounded transition"
+          className="bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold shadow-lg hover:shadow-blue-500/40 transition-all"
         >
           Registrar
         </button>
 
         {feedback && (
-          <p className="text-sm text-gray-700 bg-gray-100 p-2 rounded">
+          <p className="text-sm text-white bg-white/20 p-2 rounded-lg border border-white/30">
             {feedback}
           </p>
         )}
